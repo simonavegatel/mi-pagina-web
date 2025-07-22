@@ -22,6 +22,7 @@ export default function AboutSection() {
           </div>
         </div>
       </Container>
+      
     </section>
   );
 }
