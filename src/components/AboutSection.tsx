@@ -2,10 +2,10 @@ import Container from "./ui/Container";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-16 bg-muted dark:bg-darkbg">
+    <section id="about" className="py-16">
       <Container className="max-w-3xl mx-auto text-center">
-        <h3 className="text-2xl font-bold text-primary mb-4">Sobre nosotros</h3>
-        <p className="text-lg text-foreground dark:text-darkfg mb-6">
+        <h3 className="text-3xl font-bold text-primary mb-4">Sobre nosotros</h3>
+        <p className="text-lg text-foreground">
           Somos un equipo apasionado por la tecnología y el diseño, dedicados a crear experiencias web modernas, accesibles y atractivas. Nos encanta aprender, compartir y ayudar a otros a crecer en el mundo digital.
         </p>
         <div className="flex flex-col md:flex-row gap-8 justify-center items-center mt-8">

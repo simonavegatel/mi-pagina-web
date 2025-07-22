@@ -2,9 +2,12 @@
 import Container from "./ui/Container";
 import Link from "./ui/Link";
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 0);
@@ -15,13 +18,14 @@ export default function Header() {
   return (
 
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled
-        ? "bg-white/20 backdrop-blur-sm shadow-md" // Fondo blanco con transparencia
-        : "bg-transparent text-white" // Fondo transparente
-        }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        scrolled
+          ? "bg-white/20 backdrop-blur-sm shadow-md text-foreground"
+          : isHome
+            ? "bg-transparent text-white"
+            : "bg-transparent text-foreground"
+      }`}
     >
-
-
 
       <Container className="py-4 flex justify-between items-center">
         <h1 className="font-winky text-xl font-bold transition-colors duration-0">
@@ -32,35 +36,16 @@ export default function Header() {
         <nav className="space-x-8">
           <Link
             to="/"
-
           >
             Inicio
           </Link>
           <Link
             to="/about"
-
-
           >
             Sobre nosotros
           </Link>
           <Link
-            to="/services"
-
-
-          >
-            Servicios
-          </Link>
-          <Link
-            to="/products"
-
-
-          >
-            Productos
-          </Link>
-          <Link
             to="/contact"
-
-
           >
             Contacto
           </Link>
