@@ -6,8 +6,8 @@ type LinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
 };
 
 const variants = {
-  primary: "text-primary hover:text-accent",
-  secondary: "text-gray-500 hover:text-accent",
+  primary: "text-black hover:text-accent transition-colors duration-300 relative inline-block transition-colors duration-300 after:content-[''] after:block after:h-[2px] after:w-full after:bg-accent after:mt-1 after:scale-x-0 after:transition-transform after:duration-300 after:origin-center hover:text-accent hover:after:scale-x-100",
+  secondary: "text-gray-500 hover:text-accent transition-colors duration-300",
 };
 
 export default function Link({
