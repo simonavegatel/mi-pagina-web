@@ -1,19 +1,23 @@
 // src/App.tsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Features from "./components/Features";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 export default function App() {
   return (
-    <>
-    <div className="min-h-screen flex flex-col">
-  <Header />
-  <Hero className="flex-1" />
-  {/* ...otros componentes */}
-</div>
-      <Features />
+    <BrowserRouter>
+      <Header />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
