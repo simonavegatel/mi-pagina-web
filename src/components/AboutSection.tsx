@@ -10,7 +10,7 @@ export default function AboutSection() {
         </p>
         <div className="flex flex-col md:flex-row gap-8 justify-center items-center mt-8">
           <img
-            src="/about.jpg"
+            src="about.jpg"
             alt="Nuestro equipo"
             className="w-40 h-40 object-cover rounded-full shadow-lg"
           />
