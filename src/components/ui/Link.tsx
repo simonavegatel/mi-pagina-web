@@ -1,12 +1,14 @@
 // src/components/ui/Link.tsx
-import React from "react";
+import { Link as RouterLink } from "react-router-dom";
+import type { LinkProps as RouterLinkProps } from "react-router-dom";
 
-type LinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+type LinkProps = RouterLinkProps & {
   variant?: "primary" | "secondary";
+  className?: string;
 };
 
 const variants = {
-  primary: "text-black hover:text-accent transition-colors duration-300 relative inline-block transition-colors duration-300 after:content-[''] after:block after:h-[2px] after:w-full after:bg-accent after:mt-1 after:scale-x-0 after:transition-transform after:duration-300 after:origin-center hover:text-accent hover:after:scale-x-100",
+  primary: "text-primary hover:text-accent transition-colors duration-300 relative inline-block after:content-[''] after:block after:h-[2px] after:w-full after:bg-accent after:mt-1 after:scale-x-0 after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100",
   secondary: "text-gray-500 hover:text-accent transition-colors duration-300",
 };
 
@@ -16,7 +18,7 @@ export default function Link({
   ...props
 }: LinkProps) {
   return (
-    <a
+    <RouterLink
       className={`${variants[variant]} ${className}`}
       {...props}
     />
