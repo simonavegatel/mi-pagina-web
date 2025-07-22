@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        winky: ['"Winky Rough"', 'sans-serif'],
+      },
       colors: {
         primary: "#120023",     
         secondary: "#0cca98", 
@@ -15,8 +18,10 @@ export default {
         success: "#22c55e",      // verde para éxito
         warning: "#facc15",      // amarillo para advertencias
         error: "#ef4444",        // rojo para errores
-        background: "#ffffff",   // fondo principal
-        foreground: "#111827",   // texto principal
+        background: "#fff",
+        foreground: "#111827",
+        darkbg: "#18181b",
+        darkfg: "#f3f4f6",
       },
     },
   },
