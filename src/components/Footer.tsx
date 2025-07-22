@@ -3,7 +3,7 @@ import Container from "./ui/Container";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-6 mt-20">
+    <footer className="bg-primary text-white py-6 mt-20">
       <Container className="text-center">
         <p>
           &copy; {new Date().getFullYear()} {' '}
@@ -11,7 +11,7 @@ export default function Footer() {
             href="https://cursosluisvives.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-400 underline hover:text-blue-600"
+            className="text-accent hover:text-secondary"
           > 
              miau
           </a>. Todos los derechos reservados.

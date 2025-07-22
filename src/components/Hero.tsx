@@ -4,8 +4,8 @@ import Button from "./ui/Button";
 
 export default function Hero({ className }: { className?: string }) {
   return (
-    <section
-      className={`relative flex items-center bg-[url('/src/assets/hero.jpg')] bg-cover bg-center ${className}`}
+    <section id="hero"
+      className={`relative flex items-center bg-[url('/src/assets/hero.jpg')] bg-cover bg-center min-h-screen ${className}`}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/50"></div>
@@ -15,7 +15,7 @@ export default function Hero({ className }: { className?: string }) {
         <p className="text-lg text-white mb-6">
           Aquí puedes aprender, construir y explorar con React y Tailwind.
         </p>
-        <Button>Empieza ahora</Button>
+        <Button variant="accent">Empieza ahora</Button>
       </Container>
     </section>
   );

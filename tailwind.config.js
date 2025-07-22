@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#a78bfa",      // lila principal (Tailwind purple-400)
-        secondary: "#f59e42",    // naranja secundario
-        accent: "#f472b6",       // rosa para detalles (Tailwind pink-400)
+        primary: "#120023",     
+        secondary: "#0cca98", 
+        accent: "#fd2eb3",     
         muted: "#f3f4f6",        // gris claro para fondos
         info: "#0ea5e9",         // azul claro para info
         success: "#22c55e",      // verde para éxito
