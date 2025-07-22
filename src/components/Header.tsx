@@ -30,35 +30,34 @@ export default function Header() {
           <Link
             to="/"
             variant="primary"
-            className="relative inline-block after:content-[''] after:block after:h-[2px] after:w-full after:bg-secondary after:scale-x-0 after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100"
           >
             Inicio
           </Link>
           <Link
             to="/about"
             variant="primary"
-            className="relative inline-block after:content-[''] after:block after:h-[2px] after:w-full after:bg-secondary after:scale-x-0 after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100"
+           
           >
             Sobre nosotros
           </Link>
           <Link
             to="/services"
             variant="primary"
-            className="relative inline-block after:content-[''] after:block after:h-[2px] after:w-full after:bg-secondary after:scale-x-0 after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100"
+           
           >
             Servicios
           </Link>
           <Link
             to="/products"
             variant="primary"
-            className="relative inline-block after:content-[''] after:block after:h-[2px] after:w-full  after:bg-secondary after:scale-x-0 after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100"
+           
           >
             Productos
           </Link>
           <Link
             to="/contact"
             variant="primary"
-            className="relative inline-block after:content-[''] after:block after:h-[2px] after:w-full after:bg-secondary after:scale-x-0 after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100"
+            
           >
             Contacto
           </Link>
