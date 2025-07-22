@@ -7,8 +7,11 @@ import Footer from "./components/Footer";
 export default function App() {
   return (
     <>
-      <Header />
-      <Hero />
+    <div className="min-h-screen flex flex-col">
+  <Header />
+  <Hero className="flex-1" />
+  {/* ...otros componentes */}
+</div>
       <Features />
       <Footer />
     </>
