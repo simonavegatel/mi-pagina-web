@@ -1,6 +1,31 @@
 import Container from "../components/ui/Container";
+import { useState } from "react";
 
 export default function Contact() {
+  const [values, setValues] = useState({ name: "", email: "", message: "" });
+  const [errors, setErrors] = useState({ name: "", email: "", message: "" });
+
+  function validateField(name: string, value: string) {
+    switch (name) {
+      case "name":
+        return value.trim() === "" ? "El nombre es obligatorio" : "";
+      case "email":
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+          ? ""
+          : "Introduce un email válido";
+      case "message":
+        return value.trim() === "" ? "El mensaje es obligatorio" : "";
+      default:
+        return "";
+    }
+  }
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+    const { name, value } = e.target;
+    setValues((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
+  }
+
   return (
     <section className="pt-20">
       <h1 className="font-winky text-6xl font-bold mb-10 flex justify-center items-center">
@@ -45,7 +70,10 @@ export default function Contact() {
               name="name"
               className="w-full p-3 rounded-xl border border-primary/20 focus:border-accent focus:ring-2 focus:ring-accent outline-none transition-all"
               required
+              onChange={handleChange}
+              value={values.name}
             />
+            {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
           </div>
           <div>
             <label htmlFor="email" className="block text-primary font-semibold mb-1">Email</label>
@@ -55,7 +83,10 @@ export default function Contact() {
               name="email"
               className="w-full p-3 rounded-xl border border-primary/20 focus:border-accent focus:ring-2 focus:ring-accent outline-none transition-all"
               required
+              onChange={handleChange}
+              value={values.email}
             />
+            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
           </div>
           <div>
             <label htmlFor="message" className="block text-primary font-semibold mb-1">Mensaje</label>
@@ -65,7 +96,10 @@ export default function Contact() {
               rows={4}
               className="w-full p-3 rounded-xl border border-primary/20 focus:border-accent focus:ring-2 focus:ring-accent outline-none transition-all"
               required
+              onChange={handleChange}
+              value={values.message}
             />
+            {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
           </div>
           <button
             type="submit"
