@@ -68,12 +68,30 @@ export default function Contact() {
               type="text"
               id="name"
               name="name"
-              className="w-full p-3 rounded-xl border border-primary/20 focus:border-accent focus:ring-2 focus:ring-accent outline-none transition-all"
+              className={
+                "w-full p-3 rounded-xl border focus:border-accent focus:ring-2 focus:ring-accent outline-none transition-all " +
+                (errors.name
+                  ? "border-error"
+                  : values.name
+                  ? "border-success"
+                  : "border-primary/20")
+              }
               required
               onChange={handleChange}
               value={values.name}
             />
-            {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
+            {errors.name ? (
+              <p className="text-red-500 text-sm">{errors.name}</p>
+            ) :
+              values.name && (
+                <p className="text-success text-sm flex items-center gap-1">
+                  <svg className="w-4 h-4 text-success" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  Nombre válido
+                </p>
+              )
+            }
           </div>
           <div>
             <label htmlFor="email" className="block text-primary font-semibold mb-1">Email</label>
@@ -81,12 +99,30 @@ export default function Contact() {
               type="email"
               id="email"
               name="email"
-              className="w-full p-3 rounded-xl border border-primary/20 focus:border-accent focus:ring-2 focus:ring-accent outline-none transition-all"
+              className={
+                "w-full p-3 rounded-xl border focus:border-accent focus:ring-2 focus:ring-accent outline-none transition-all " +
+                (errors.email
+                  ? "border-error"
+                  : values.email
+                  ? "border-success"
+                  : "border-primary/20")
+              }
               required
               onChange={handleChange}
               value={values.email}
             />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+            {errors.email ? (
+              <p className="text-red-500 text-sm">{errors.email}</p>
+            ) :
+              values.email && (
+                <p className="text-success text-sm flex items-center gap-1">
+                  <svg className="w-4 h-4 text-success" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  Email válido
+                </p>
+              )
+            }
           </div>
           <div>
             <label htmlFor="message" className="block text-primary font-semibold mb-1">Mensaje</label>
@@ -94,12 +130,30 @@ export default function Contact() {
               id="message"
               name="message"
               rows={4}
-              className="w-full p-3 rounded-xl border border-primary/20 focus:border-accent focus:ring-2 focus:ring-accent outline-none transition-all"
+              className={
+                "w-full p-3 rounded-xl border focus:border-accent focus:ring-2 focus:ring-accent outline-none transition-all " +
+                (errors.message
+                  ? "border-error"
+                  : values.message
+                  ? "border-success"
+                  : "border-primary/20")
+              }
               required
               onChange={handleChange}
               value={values.message}
             />
-            {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
+            {errors.message ? (
+              <p className="text-red-500 text-sm">{errors.message}</p>
+            ) :
+              values.message && (
+                <p className="text-success text-sm flex items-center gap-1">
+                  <svg className="w-4 h-4 text-success" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  Mensaje válido
+                </p>
+              )
+            }
           </div>
           <button
             type="submit"

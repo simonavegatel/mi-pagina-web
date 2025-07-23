@@ -1,5 +1,5 @@
 import Container from "../components/ui/Container";
-import DaisyList from "../components/ui/DaisyList";
+
 
 const team = [
   {
@@ -87,7 +87,7 @@ export default function About() {
           ))}
         </div>
       </Container>
-      <DaisyList />
+  
     </section>
   );
 }
