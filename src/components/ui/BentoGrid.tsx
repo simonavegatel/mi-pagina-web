@@ -59,7 +59,7 @@ const bentoItems = [
     description: null,
     className: "bg-accent/10 text-accent flex-col justify-center items-center",
     content: (
-      <button className="mt-2 px-4 py-2 rounded-lg bg-accent text-white font-bold shadow hover:bg-primary transition-colors">Enviar mensaje</button>
+      <button className="mt-2 px-4 py-2 rounded-lg bg-accent text-white font-bold hover:bg-primary transition-colors">Enviar mensaje</button>
     ),
   },
   {

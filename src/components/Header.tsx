@@ -36,16 +36,37 @@ export default function Header() {
         <nav className="space-x-8">
           <Link
             to="/"
+            className={`
+              transition-colors duration-500
+              ${scrolled || !isHome
+                ? "text-foreground hover:text-gray-700"
+                : "text-white hover:text-gray-300"
+              }
+            `}
           >
             Inicio
           </Link>
           <Link
             to="/about"
+            className={`
+              transition-colors duration-500
+              ${scrolled || !isHome
+                ? "text-foreground hover:text-gray-700"
+                : "text-white hover:text-gray-300"
+              }
+            `}
           >
             Sobre nosotros
           </Link>
           <Link
             to="/contact"
+            className={`
+              transition-colors duration-500
+              ${scrolled || !isHome
+                ? "text-foreground hover:text-gray-700"
+                : "text-white hover:text-gray-300"
+              }
+            `}
           >
             Contacto
           </Link>
