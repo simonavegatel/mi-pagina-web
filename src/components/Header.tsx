@@ -37,7 +37,7 @@ export default function Header() {
           <Link
             to="/"
             className={`
-              transition-colors duration-500
+              transition-colors duration-500 ease-in-out
               ${scrolled || !isHome
                 ? "text-foreground hover:text-gray-700"
                 : "text-white hover:text-gray-300"

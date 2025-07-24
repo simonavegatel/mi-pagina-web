@@ -3,9 +3,9 @@ import Container from "./ui/Container";
 
 export default function Features() {
   return (
-    <section id="features" className="py-16">
+    <section id="features" className="py-20">
       <Container>
-        <h3 className="text-3xl font-bold text-center mb-10 text-primary">Características</h3>
+        <h3 className="text-4xl font-extrabold text-center mb-10 text-primary">Características</h3>
         <div className="grid md:grid-cols-3 gap-8">
           <div className="p-6 rounded-3xl shadow-sm bg-white text-center border border-primary/20 transition-all duration-500 hover:scale-105 hover:shadow-md hover:border-accent">
             <h4 className="font-bold mb-2 text-primary">Rápido</h4>
