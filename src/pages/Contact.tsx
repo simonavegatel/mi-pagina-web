@@ -61,106 +61,141 @@ export default function Contact() {
         </div>
 
         {/* Formulario de contacto */}
-        <form className="max-w-xl mx-auto bg-white rounded-3xl shadow-sm border border-primary/20 p-8 flex flex-col gap-6 mb-12">
-          <div>
-            <label htmlFor="name" className="block text-primary font-semibold mb-1">Nombre</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              className={
-                "w-full p-3 rounded-xl border focus:border-accent focus:ring-2 focus:ring-accent outline-none transition-all " +
-                (errors.name
-                  ? "border-error"
-                  : values.name
-                  ? "border-success"
-                  : "border-primary/20")
-              }
-              required
-              onChange={handleChange}
-              value={values.name}
-            />
-            {errors.name ? (
-              <p className="text-red-500 text-sm">{errors.name}</p>
-            ) :
-              values.name && (
+        <form className="max-w-xl mx-auto bg-white shadow-sm border-2 border-accent p-8 flex flex-col gap-6 mb-12">
+          <fieldset className="border-0 p-0 m-0">
+            <legend className="text-xl font-bold text-center text-accent mb-12">Contáctanos</legend>
+            
+            {/* Aquí van los campos del formulario */}
+            <div className="relative mb-6">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                className={
+                  "peer w-full p-3 border bg-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all placeholder-transparent " +
+                  (errors.name
+                    ? "border-error"
+                    : values.name
+                    ? "border-success"
+                    : "border-primary/20")
+                }
+                placeholder="Nombre"
+                required
+                onChange={handleChange}
+                value={values.name}
+              />
+              <label
+                htmlFor="name"
+                className={
+                  "absolute left-3 top-3 bg-white px-1 transition-all duration-200 pointer-events-none " +
+                  (values.name
+                    ? "-top-3 text-sm text-accent"
+                    : "peer-placeholder-shown:top-3 peer-placeholder-shown:text-base text-primary/20") +
+                  " peer-focus:-top-3 peer-focus:text-sm peer-focus:text-accent"
+                }
+              >
+                Nombre
+              </label>
+              {errors.name ? (
+                <p className="text-red-500 text-sm">{errors.name}</p>
+              ) : values.name && (
                 <p className="text-success text-sm flex items-center gap-1">
                   <svg className="w-4 h-4 text-success" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                   Nombre válido
                 </p>
-              )
-            }
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-primary font-semibold mb-1">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className={
-                "w-full p-3 rounded-xl border focus:border-accent focus:ring-2 focus:ring-accent outline-none transition-all " +
-                (errors.email
-                  ? "border-error"
-                  : values.email
-                  ? "border-success"
-                  : "border-primary/20")
-              }
-              required
-              onChange={handleChange}
-              value={values.email}
-            />
-            {errors.email ? (
-              <p className="text-red-500 text-sm">{errors.email}</p>
-            ) :
-              values.email && (
+              )}
+            </div>
+            <div className="relative mb-6">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className={
+                  "peer w-full p-3 border bg-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all placeholder-transparent " +
+                  (errors.email
+                    ? "border-error"
+                    : values.email
+                    ? "border-success"
+                    : "border-primary/20")
+                }
+                placeholder="Email"
+                required
+                onChange={handleChange}
+                value={values.email}
+              />
+              <label
+                htmlFor="email"
+                className={
+                  "absolute left-3 top-3 bg-white px-1 transition-all duration-200 pointer-events-none " +
+                  (values.email
+                    ? "-top-3 text-sm text-accent"
+                    : "peer-placeholder-shown:top-3 peer-placeholder-shown:text-base text-primary/20") +
+                  " peer-focus:-top-3 peer-focus:text-sm peer-focus:text-accent"
+                }
+              >
+                Email
+              </label>
+              {errors.email ? (
+                <p className="text-red-500 text-sm">{errors.email}</p>
+              ) : values.email && (
                 <p className="text-success text-sm flex items-center gap-1">
                   <svg className="w-4 h-4 text-success" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                   Email válido
                 </p>
-              )
-            }
-          </div>
-          <div>
-            <label htmlFor="message" className="block text-primary font-semibold mb-1">Mensaje</label>
-            <textarea
-              id="message"
-              name="message"
-              rows={4}
-              className={
-                "w-full p-3 rounded-xl border focus:border-accent focus:ring-2 focus:ring-accent outline-none transition-all " +
-                (errors.message
-                  ? "border-error"
-                  : values.message
-                  ? "border-success"
-                  : "border-primary/20")
-              }
-              required
-              onChange={handleChange}
-              value={values.message}
-            />
-            {errors.message ? (
-              <p className="text-red-500 text-sm">{errors.message}</p>
-            ) :
-              values.message && (
+              )}
+            </div>
+            <div className="relative mb-6">
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
+                className={
+                  "peer w-full p-3 border bg-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all placeholder-transparent " +
+                  (errors.message
+                    ? "border-error"
+                    : values.message
+                    ? "border-success"
+                    : "border-primary/20")
+                }
+                placeholder="Mensaje"
+                required
+                onChange={handleChange}
+                value={values.message}
+              />
+              <label
+                htmlFor="message"
+                className={
+                  "absolute left-3 top-3 bg-white px-1 transition-all duration-200 pointer-events-none " +
+                  (values.message
+                    ? "-top-3 text-sm text-accent"
+                    : "peer-placeholder-shown:top-3 peer-placeholder-shown:text-base text-primary/20") +
+                  " peer-focus:-top-3 peer-focus:text-sm peer-focus:text-accent"
+                }
+              >
+                Mensaje
+              </label>
+              {errors.message ? (
+                <p className="text-red-500 text-sm">{errors.message}</p>
+              ) : values.message && (
                 <p className="text-success text-sm flex items-center gap-1">
                   <svg className="w-4 h-4 text-success" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                   Mensaje válido
                 </p>
-              )
-            }
-          </div>
-          <button
-            type="submit"
-            className="bg-accent text-white font-bold py-3 px-8 rounded-xl shadow hover:bg-primary transition-colors"
-          >
-            Enviar mensaje
-          </button>
+              )}
+            </div>
+            <button
+              type="submit"
+              className="bg-accent text-white font-semibold py-3 px-8 shadow hover:bg-primary transition-colors"
+            >
+              Enviar
+            </button>
+          </fieldset>
         </form>
 
     
