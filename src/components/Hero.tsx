@@ -48,7 +48,7 @@ export default function Hero({ className }: { className?: string }) {
             x: x / bubbles[i].factor, // Movimiento horizontal suavizado
             y: y / bubbles[i].factor, // Movimiento vertical suavizado
             duration: 2,            // Duración de la animación (más alto = más suave)
-            ease: "power3.out"        // Tipo de suavizado de la animación
+            ease: "power2.out"        // Tipo de suavizado de la animación
           });
         }
       });
