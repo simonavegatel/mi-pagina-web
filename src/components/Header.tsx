@@ -59,6 +59,18 @@ export default function Header() {
             Sobre nosotros
           </Link>
           <Link
+            to="/services"
+            className={`
+              transition-colors duration-500
+              ${scrolled || !isHome
+                ? "text-foreground hover:text-gray-700"
+                : "text-white hover:text-gray-300"
+              }
+            `}
+          >
+            Servicios
+          </Link>
+          <Link
             to="/contact"
             className={`
               transition-colors duration-500
